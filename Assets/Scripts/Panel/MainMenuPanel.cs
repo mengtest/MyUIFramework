@@ -4,12 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MainMenuPanel : UIBasePanel {
-    private CanvasGroup m_CanvasGroup;
-
-    void Start()
-    {
-        m_CanvasGroup = GetComponent<CanvasGroup>();
-    }
 
     public void OnPushPanel(string panelTypeString)
     {

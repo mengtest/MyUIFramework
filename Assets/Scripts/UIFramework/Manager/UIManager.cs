@@ -97,15 +97,9 @@ public class UIManager {
         }
     }
 
+    /// 用于Json解析
     class UIPanelTypeJson
     {
         public List<UIPanelInfo> InfoList;
-    }
-
-    public void Test()
-    {
-        string path;
-        m_PanelPathDict.TryGetValue(UIPanelType.ItemMessage, out path);
-        Debug.Log(path);
     }
 }

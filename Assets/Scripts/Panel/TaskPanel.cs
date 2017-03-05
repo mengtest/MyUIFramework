@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class TaskPanel : UIBasePanel
 {
-    private CanvasGroup m_CanvasGroup;
-
-    void Start()
-    {
-        if (m_CanvasGroup == null)
-            m_CanvasGroup = GetComponent<CanvasGroup>();
-    }
-
     public override void OnEnter()
     {
         if (m_CanvasGroup == null)
@@ -25,10 +17,5 @@ public class TaskPanel : UIBasePanel
     {
         m_CanvasGroup.alpha = 0;
         m_CanvasGroup.blocksRaycasts = false;
-    }
-
-    public void OnClosePanel()
-    {
-        UIManager.GetInstance().PopPanel();
     }
 }
