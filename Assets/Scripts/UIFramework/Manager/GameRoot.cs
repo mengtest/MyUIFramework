@@ -7,6 +7,6 @@ public class GameRoot : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-	    UIManager.GetInstance().Test();
+	    UIManager.GetInstance().PushPanel(UIPanelType.MainMenu);
 	}
 }

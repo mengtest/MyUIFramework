@@ -25,12 +25,46 @@ public class UIManager {
 
     // 储存所有面板Prefab的路径
     private Dictionary<UIPanelType, string> m_PanelPathDict;
-    // 储存所有实例化的面板基类s
+    // 储存所有实例化的面板基类
     private Dictionary<UIPanelType, UIBasePanel> m_PanelDict;
+    // 储存显示的面板
+    private Stack<UIBasePanel> m_PanelStack;
 
     public UIManager()
     {
+        m_PanelStack = new Stack<UIBasePanel>();
+        m_PanelDict = new Dictionary<UIPanelType, UIBasePanel>();
         ParseUIPanelTypeJson();
+    }
+
+    /// <summary>
+    /// 入栈并显示面板
+    /// </summary>
+    public void PushPanel(UIPanelType panelType)
+    {
+        // 暂停上一级的页面
+        if (m_PanelStack.Count > 0)
+        {
+            UIBasePanel topPanel = m_PanelStack.Peek();
+            topPanel.OnPause();
+        }
+        UIBasePanel panel = GetPanel(panelType);
+        panel.OnEnter();
+        m_PanelStack.Push(panel);
+    }
+
+    /// <summary>
+    /// 出栈并移除显示
+    /// </summary>
+    public void PopPanel()
+    {
+        if (m_PanelStack.Count <= 0) return;
+        UIBasePanel topPanel = m_PanelStack.Pop();
+        topPanel.OnExit();
+
+        if (m_PanelStack.Count <= 0) return;
+        topPanel = m_PanelStack.Peek();
+        topPanel.OnResume();
     }
 
     private void ParseUIPanelTypeJson()
@@ -47,11 +81,6 @@ public class UIManager {
 
     public UIBasePanel GetPanel(UIPanelType panelType)
     {
-        if (m_PanelDict == null)
-        {
-            m_PanelDict = new Dictionary<UIPanelType, UIBasePanel>();
-        }
-
         UIBasePanel panel = m_PanelDict.TryGet(panelType);
         if (panel == null)
         {

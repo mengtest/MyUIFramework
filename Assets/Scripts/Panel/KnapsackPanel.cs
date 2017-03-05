@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class KnapsackPanel : UIBasePanel {
+    private CanvasGroup m_CanvasGroup;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Start()
+    {
+    }
+
+    public void OnClosePanel()
+    {
+        UIManager.GetInstance().PopPanel();
+    }
 }

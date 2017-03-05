@@ -3,14 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UIBasePanel : MonoBehaviour {
+    /// 界面的四个生命周期
+    public virtual void OnEnter()
+    {
+        
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    public virtual void OnPause()
+    {
+        
+    }
 
+    public virtual void OnResume()
+    {
+        
+    }
+
+    public virtual void OnExit()
+    {
+        
     }
 }
