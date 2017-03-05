@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUIFramework", "MyUIFramework.csproj", "{E9CBC2A8-6C1F-BE37-DC79-34A173F7CFDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUIFramework.Editor", "MyUIFramework.Editor.csproj", "{496C6737-37D2-104F-6D39-44F748F6C087}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{E9CBC2A8-6C1F-BE37-DC79-34A173F7CFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9CBC2A8-6C1F-BE37-DC79-34A173F7CFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9CBC2A8-6C1F-BE37-DC79-34A173F7CFDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{496C6737-37D2-104F-6D39-44F748F6C087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{496C6737-37D2-104F-6D39-44F748F6C087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{496C6737-37D2-104F-6D39-44F748F6C087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{496C6737-37D2-104F-6D39-44F748F6C087}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
